@@ -6,7 +6,7 @@
 /*   By: cwenz <cwenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:48:32 by cwenz             #+#    #+#             */
-/*   Updated: 2023/05/05 12:50:23 by cwenz            ###   ########.fr       */
+/*   Updated: 2023/05/05 16:49:03 by cwenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!s1)
 	{
 		s1 = malloc(sizeof(char));
-		if (!s1)
-			return (NULL);
+		if (!s1) 
+			return (free(s1), NULL);
 		s1[0] = '\0';
 	}
-	if (!s2)
-		return (s1);
 	str = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (free(s1), NULL);
@@ -49,9 +47,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[i2])
 		str[i++] = s2[i2++];
 	str[i] = '\0';
-	// printf("STRJOIN(): %s\n", str);
-	free(s1);
-	return (str);
+	return (free(s1), str);
 }
 
 /**

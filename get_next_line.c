@@ -6,7 +6,7 @@
 /*   By: cwenz <cwenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:48:29 by cwenz             #+#    #+#             */
-/*   Updated: 2023/05/02 19:20:55 by cwenz            ###   ########.fr       */
+/*   Updated: 2023/05/05 13:34:30 by cwenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,20 @@
 */
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer = NULL;
 	char		*line;
 
-	// buffer = NULL; // THIS THING HERE AHHHHHHHHHHHHHH
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	buffer = get_current_line(buffer, fd);
 	if (!buffer)
 		return (NULL);
 	line = set_current_line(buffer);
+	if (line[0] == '\0' && !ft_strchr(buffer, '\n')) {
+		free(line);
+		buffer = free_upto(buffer);
+		return (NULL);
+	}
 	buffer = free_upto(buffer); // Free up static char
 	return (line);
 }
@@ -43,7 +47,7 @@ char	*get_current_line(char *buffer, int fd)
 	temp = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!temp)
 		return (NULL);
-	while ((!ft_strchr(buffer, '\n') && bytes_read != 0) || (bytes_read == BUFFER_SIZE && buffer[ft_strlen(buffer) - 1] != '\n'))
+	while ((!ft_strchr(buffer, '\n') && bytes_read != 0))
 	{
 		bytes_read = read(fd, temp, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -61,7 +65,6 @@ char	*get_current_line(char *buffer, int fd)
 	free(temp);
 	return (buffer);
 }
-
 
 char	*set_current_line(char *str)
 {
@@ -90,6 +93,8 @@ char	*set_current_line(char *str)
 		line[++i] = '\0';
 	return (line);
 }
+
+
 char	*free_upto(char *str)
 {
 	char	*temp;
@@ -110,7 +115,6 @@ char	*free_upto(char *str)
 	temp = malloc(sizeof(char) * ft_strlen(str) - i + 1);
 	if (!temp)
 		return (free(str), NULL);
-	// i++;
 	while (str[i])
 		temp[j++] = str[i++];
 	temp[j] = '\0';
@@ -118,15 +122,33 @@ char	*free_upto(char *str)
 	return (temp); // Return the temp value (everything after newline)
 }
 
-int	main(void)
-{
-	int	fd;
-
-	fd = open("test.txt", O_RDONLY);
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("\n");
-	return (0);
-}
+// int	main(void)
+// {
+// 	int	fd;
+// 	char *line;
+// 	int i;
+	
+// 	i =0;
+// 	fd = open("test.txt", O_RDONLY);
+// 	line = get_next_line(fd);
+// 	while (1)
+// 	{
+// 		if (line[i] == '\n')
+// 			printf("Found new line");
+// 		if (line[i] == '\0')
+// 			printf("Found null terminating");
+// 		printf("%c", line[i]);
+// 		if (line[i] == '\0')
+// 			break ;
+// 		i++;
+// 	}
+// 	printf("\n\n---OUTPUT---\n");
+// 	char *result = get_next_line(fd) == NULL ? "Not Null": "NULL";
+// 	printf("LINE: %s", result);
+// 	// printf("%s", get_next_line(fd));
+// 	// printf("%s", get_next_line(fd));
+// 	// printf("%s", get_next_line(fd));
+// 	// printf("%s", get_next_line(fd));
+// 	printf("\n");
+// 	return (0);
+// }
