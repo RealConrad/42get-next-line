@@ -6,7 +6,7 @@
 /*   By: cwenz <cwenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:48:51 by cwenz             #+#    #+#             */
-/*   Updated: 2023/05/02 14:52:39 by cwenz            ###   ########.fr       */
+/*   Updated: 2023/05/08 09:42:38 by cwenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #  define BUFFER_SIZE 20
 # endif
 
-# include <fcntl.h> //REMOVE THIS
-# include <stdio.h> // REMOVE THIS
 # include <stdlib.h>
 # include <unistd.h>
 
