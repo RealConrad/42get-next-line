@@ -6,12 +6,18 @@
 /*   By: cwenz <cwenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:48:32 by cwenz             #+#    #+#             */
-/*   Updated: 2023/05/05 16:49:03 by cwenz            ###   ########.fr       */
+/*   Updated: 2023/05/08 09:24:24 by cwenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+/**
+ * @brief Calculates the length of a null-terminated string 
+ *	(Not including the null terminator).
+ * @param str A pointer to the null-terminated string whose length is to be calculated
+ * @return The length of the string pointed to by str, not including the null terminator
+*/
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -21,7 +27,14 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-
+/**
+ * @brief Concatenates two strings s1 and s2 and returns a new string.
+ * @param s1 The first string to concatenate.
+ * @param s2 The second string to concatenate.
+ * @return A new string that is the result of concatenating s1 and s2,
+ * 	or NULL if s1 and s2 are both NULL or if memory allocation fails.
+ * @note The returned string must be freed by the caller when it is no longer needed.
+*/
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
@@ -51,12 +64,12 @@ char	*ft_strjoin(char *s1, char *s2)
 }
 
 /**
-** @brief Searches for the first occurrence of a character in a string
-**			and returns a pointer to that character or a null pointer
-**			if the character is not found.
-** @param s Pointer to the string to be searched
-** @param c Character to be located
-** @return Returns a pointer to the first occurrence of the character
+ * @brief Searches for the first occurrence of a character in a string
+ *			and returns a pointer to that character or a null pointer
+ *			if the character is not found.
+ * @param s Pointer to the string to be searched
+ * @param c Character to be located
+ * @return Returns a pointer to the first occurrence of the character
 */
 char	*ft_strchr(const char *s, int c)
 {
