@@ -6,11 +6,11 @@
 /*   By: cwenz <cwenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:48:32 by cwenz             #+#    #+#             */
-/*   Updated: 2023/05/08 09:24:24 by cwenz            ###   ########.fr       */
+/*   Updated: 2023/05/08 09:42:05 by cwenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 /**
  * @brief Calculates the length of a null-terminated string 

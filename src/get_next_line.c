@@ -6,11 +6,11 @@
 /*   By: cwenz <cwenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:48:29 by cwenz             #+#    #+#             */
-/*   Updated: 2023/05/08 09:37:08 by cwenz            ###   ########.fr       */
+/*   Updated: 2023/05/08 09:42:00 by cwenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 /**
  * @brief Extracts one line at a time from a text file
