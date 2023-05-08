@@ -67,8 +67,8 @@ int main(int argc, char **argv)
 ```
 Compiling and executing:
 ```shell
-% cc -Wall -Werror -Wextra main.c get_next_line.c get_next_line_utils.c
-% ./a.out
+% gcc -Wall -Wextra -Werror -D BUFFER_SIZE=32 main.c get_next_line.c get_next_line_utils.c -o gnl_test
+% ./gnl_test <filename>.txt
 ```
 
 
