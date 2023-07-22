@@ -6,7 +6,7 @@
 /*   By: cwenz <cwenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:48:29 by cwenz             #+#    #+#             */
-/*   Updated: 2023/05/08 09:42:00 by cwenz            ###   ########.fr       */
+/*   Updated: 2023/07/22 11:44:36 by cwenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,34 +155,3 @@ char	*free_upto(char *str)
 	free(str);
 	return (temp);
 }
-
-// int	main(void)
-// {
-// 	int	fd;
-// 	char *line;
-// 	int i;
-	
-// 	i =0;
-// 	fd = open("test.txt", O_RDONLY);
-// 	line = get_next_line(fd);
-// 	while (1)
-// 	{
-// 		if (line[i] == '\n')
-// 			printf("Found new line");
-// 		if (line[i] == '\0')
-// 			printf("Found null terminating");
-// 		printf("%c", line[i]);
-// 		if (line[i] == '\0')
-// 			break ;
-// 		i++;
-// 	}
-// 	printf("\n\n---OUTPUT---\n");
-// 	char *result = get_next_line(fd) == NULL ? "Not Null": "NULL";
-// 	printf("LINE: %s", result);
-// 	// printf("%s", get_next_line(fd));
-// 	// printf("%s", get_next_line(fd));
-// 	// printf("%s", get_next_line(fd));
-// 	// printf("%s", get_next_line(fd));
-// 	printf("\n");
-// 	return (0);
-// }
