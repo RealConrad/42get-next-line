@@ -6,11 +6,11 @@
 /*   By: cwenz <cwenz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:48:29 by cwenz             #+#    #+#             */
-/*   Updated: 2023/05/09 12:26:12 by cwenz            ###   ########.fr       */
+/*   Updated: 2023/07/22 11:26:00 by cwenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "../includes/get_next_line_bonus.h"
 
 /*
 --------HOW BONUS WORKS--------
